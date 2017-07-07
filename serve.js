@@ -20,14 +20,14 @@ function approveDomains(opts, certs, cb) {
   // This is where you check your database and associated
   // email addresses with domains and agreements and such
 
-
+  const certs = { altnames: 'white-county-history.org, www.white-county-history.org'}
   // The domains being approved for the first time are listed in opts.domains
   // Certs being renewed are listed in certs.altnames
   if (certs) {
     opts.domains = certs.altnames;
   }
   else {
-    opts.email = 'john.doe@example.com';
+    opts.email = 'brianc@palaver.net';
     opts.agreeTos = true;
   }
 
@@ -53,4 +53,3 @@ app.use('/', function (req, res) {
 require('https').createServer(lex.httpsOptions, lex.middleware(app)).listen(443, function () {
   console.log("Listening for ACME tls-sni-01 challenges and serve app on", this.address());
 });
-
