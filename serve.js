@@ -20,7 +20,6 @@ function approveDomains(opts, certs, cb) {
   // This is where you check your database and associated
   // email addresses with domains and agreements and such
 
-  const certs = { altnames: 'white-county-history.org, www.white-county-history.org'}
   // The domains being approved for the first time are listed in opts.domains
   // Certs being renewed are listed in certs.altnames
   if (certs) {
