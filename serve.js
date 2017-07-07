@@ -3,7 +3,7 @@
 // returns an instance of node-greenlock with additional helper methods
 var lex = require('greenlock-express').create({
   // set to https://acme-v01.api.letsencrypt.org/directory in production
-  server: 'staging'
+  server: 'https://acme-v01.api.letsencrypt.org/directory'
 
 // If you wish to replace the default plugins, you may do so here
 //
@@ -28,6 +28,7 @@ function approveDomains(opts, certs, cb) {
   else {
     opts.email = 'brianc@palaver.net';
     opts.agreeTos = true;
+    opts.domains = ['www.white-county-history.org', 'white-county-history.org'];
   }
 
   // NOTE: you can also change other options such as `challengeType` and `challenge`

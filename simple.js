@@ -9,7 +9,7 @@ require('greenlock-express').create({
 
 , agreeTos: true
 
-, approvedDomains: [ 'white-county-history.org', 'www.white-county-history.org' ]
+, approvedDomains: [ 'white-county-history.org', 'www.white-county-history.org' ],
 
 , app: require('express')().use('/', function (req, res) {
     res.end('Hello, World!');
